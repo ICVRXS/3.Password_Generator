@@ -20,8 +20,10 @@ var options = {
   "lowercase": confirm ("Would you like lowercase letters in your password?"),
   "uppercase": confirm ("Would you like UPPERCASE letters in your password?"),
   "numbers": confirm ("Would you like numbers in your password?"),
-  "special": confirm ("Would you like special characters in your password?");
-}
+  "special": confirm ("Would you like special characters in your password?"),
+};
+
+console.log (options);
 
 
 
