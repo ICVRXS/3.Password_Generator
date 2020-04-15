@@ -7,7 +7,13 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var special = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", ";", ":", ",", "<", ".", ">", "/", "?", "'"];
 
+function isPassLengthTrue (passLength) {
+  return passLength >= 8 && passLength <= 128;
+}
 
+while (! isPassLengthTrue (passLength)) {
+  passLength = parseInt (prompt("Provide a password length between 8 and 128"));
+}
 
 // Write password to the #password input
 function writePassword() {
