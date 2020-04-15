@@ -15,6 +15,16 @@ while (! isPassLengthTrue (passLength)) {
   passLength = parseInt (prompt("Provide a password length between 8 and 128"));
 }
 
+var options = {
+  "passLength": passLength,
+  "lowercase": confirm ("Would you like lowercase letters in your password?"),
+  "uppercase": confirm ("Would you like UPPERCASE letters in your password?"),
+  "numbers": confirm ("Would you like numbers in your password?"),
+  "special": confirm ("Would you like special characters in your password?");
+}
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
