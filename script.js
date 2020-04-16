@@ -7,11 +7,11 @@ var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var special = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", ";", ":", ",", "<", ".", ">", "/", "?", "'"];
 
-function isPassLengthTrue (passLength) {
+function isPassLengthTrue(passLength) {
   return passLength >= 8 && passLength <= 128;
 }
 
-while (! isPassLengthTrue (passLength)) {
+while (! isPassLengthTrue(passLength)) {
   passLength = parseInt (prompt("Provide a password length between 8 and 128"));
 }
 
@@ -23,8 +23,33 @@ var options = {
   "special": confirm ("Would you like special characters in your password?"),
 };
 
-console.log (options);
+//Starting while loop in case all options are returned as false
+// while (! options.lowercase && ! options.uppercase && ! options.numbers && ! options.special) {
+  
+// }
 
+console.log(options);
+
+var possibleChars = [];
+
+function passGen(trueChars) {
+  if (options.lowercase){
+    possibleChars = possibleChars.concat(lowercase);
+  }
+  if (options.uppercase){
+    possibleChars = possibleChars.concat(uppercase);
+  }
+  if (options.numbers){
+    possibleChars = possibleChars.concat(numbers);
+  }
+  if (options.special){
+    possibleChars = possibleChars.concat(special);
+  }
+};
+
+passGen(possibleChars);
+
+console.log(possibleChars);
 
 
 // Write password to the #password input
