@@ -64,7 +64,7 @@ function passGen() {
 
 console.log(passGen());
 
-
+document.getElementById("password").innerHTML=password;
 
 
 
