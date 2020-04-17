@@ -1,5 +1,5 @@
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", );
+// generateBtn.addEventListener("click", newPass);
 
 
 var passLength = 0;
@@ -23,16 +23,15 @@ var options = {
   "numbers": confirm ("Would you like numbers in your password?"),
   "special": confirm ("Would you like special characters in your password?"),
 };
-
-
 console.log(options);
 
-var possibleChars = [];
+
+function passGen() {
+
+  var possibleChars = [];
     requiredChars = [];
     password = "";
 
-
-function passGen(trueChars) {
   if (options.lowercase){
     possibleChars = possibleChars.concat(lowercase);
     requiredChars.push(lowercase [Math.floor(Math.random()*lowercase.length)]);
@@ -49,21 +48,23 @@ function passGen(trueChars) {
     possibleChars = possibleChars.concat(special);
     requiredChars.push(special [Math.floor(Math.random()*special.length)]);
   }
-};
 
-passGen(possibleChars);
-// return password;
-
-console.log(possibleChars);
-
-for (var i = 0; i < options.passLength; i++) {
-  if (requiredChars[i]){
-    password += requiredChars[i];
-  }else{
-    password += possibleChars [Math.floor(Math.random()*possibleChars.length)];
+  for (var i = 0; i < options.passLength; i++) {
+    if (requiredChars[i]){
+      password += requiredChars[i];
+    }else{
+      password += possibleChars [Math.floor(Math.random()*possibleChars.length)];
+    }
   }
 
-}
+  console.log(possibleChars);
+  return password;
+
+};
+
+console.log(passGen());
+
+
 
 
 
