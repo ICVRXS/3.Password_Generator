@@ -29,8 +29,8 @@ console.log(options);
 function passGen() {
 
   var possibleChars = [];
-    requiredChars = [];
-    password = "";
+      requiredChars = [];
+      password = "";
 
   if (options.lowercase){
     possibleChars = possibleChars.concat(lowercase);
