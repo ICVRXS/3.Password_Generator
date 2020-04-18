@@ -3,11 +3,10 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
     numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
     special = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", ";", ":", ",", "<", ".", ">", "/", "?", "'"];
     button = document.getElementById("generate");
-    passText = document.getElementById("password").innerHTML=password;
 
-// button.addEventListener("click", newPass);
+button.addEventListener("click", newPass);
 
-// function newPass() {
+function newPass() {
 
   var passLength = 0;
 
@@ -26,10 +25,9 @@ var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
       "numbers": confirm ("Would you like numbers in your password?"),
       "special": confirm ("Would you like special characters in your password?"),
   };
-
-  passGen(options);
-
-// };
+  var password = passGen(options);
+  document.getElementById("password").innerHTML=password;
+};
 
 function passGen(options) {
 
@@ -61,9 +59,8 @@ function passGen(options) {
       password += possibleChars [Math.floor(Math.random()*possibleChars.length)];
     }
   }
-
+  console.log(options);
+  console.log(password);
   return password;
 
 };
-
-console.log(password);
